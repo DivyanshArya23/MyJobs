@@ -1,0 +1,23 @@
+@import '../../assets/styles/vars';
+
+.input {
+  background: $lightGrayBg;
+  border-radius: 5px;
+  border: 1px solid $lightGrey;
+  width: 100%;
+  height: 46px;
+  padding: 5px 10px;
+  outline: none;
+  &:focus {
+    border: 1px solid $lightBlue;
+  }
+  &::placeholder {
+    color: $darkGray;
+    font-size: 14px;
+    font-weight: lighter;
+    opacity: 0.4;
+  }
+}
+.errorclass {
+  border: 1px solid $lightOrange;
+}

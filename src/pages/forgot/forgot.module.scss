@@ -1,0 +1,28 @@
+@import '../../assets/styles/vars';
+
+.upperContainer {
+  height: 45vh;
+}
+.lowerContainer {
+  height: 55vh;
+}
+.main {
+  height: 100vh;
+}
+.form {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background: $whiteBg;
+  box-shadow: $boxShadow2;
+  border-radius: 20px;
+  .formHeader {
+    font-size: 22px;
+    letter-spacing: 0px;
+    color: $darkGray;
+  }
+  .subtext {
+    font-size: 12px;
+  }
+}

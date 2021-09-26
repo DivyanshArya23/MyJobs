@@ -1,0 +1,37 @@
+@import '../../assets/styles/vars';
+
+.cards {
+  &:hover .colCard {
+    opacity: 0.5;
+  }
+}
+.colCard {
+  cursor: pointer;
+  transition-duration: 0.25s;
+  flex: 0 0 32%;
+  max-width: 32%;
+  background: $whiteBg;
+  box-shadow: $boxShadow;
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+.title {
+  font-size: 22px;
+  letter-spacing: 0px;
+  color: $lightBlue;
+  text-transform: capitalize;
+  width: 50%;
+}
+.description {
+  font: 14px;
+  letter-spacing: 0px;
+  color: $darkGray;
+  text-transform: capitalize;
+}
+
+@media only screen and (min-width: 1600px) {
+  .description {
+    font-size: 20px;
+  }
+}

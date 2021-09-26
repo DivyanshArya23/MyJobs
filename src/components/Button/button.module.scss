@@ -1,0 +1,53 @@
+@import '../../assets/styles/vars';
+//ButtonBlue----------------------------------------
+.btn1 {
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: $white;
+  padding: 5px 10px;
+  background: $darkBlueBg2;
+  border: 1px solid $lightBlue;
+  border-radius: 5px;
+  &:focus {
+    outline: none;
+  }
+}
+
+//ButtonLBlue----------------------------------------
+
+.btn2 {
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: $white;
+  padding: 8px 20px;
+  background: $lightBlueBg;
+  border: 1px solid $lightBlue;
+  border-radius: 5px;
+  &:focus {
+    outline: none;
+  }
+}
+
+//IconLBBtn-------------------------------------------
+
+.btn3 {
+  font-size: 14px;
+  letter-spacing: 0px;
+  padding: 8px 10px;
+  color: $darkGray;
+  border: 1px solid $darkGray;
+  border-radius: 5px;
+  justify-content: space-around;
+  &:focus {
+    outline: none;
+  }
+}
+.btn3Active {
+  background: $lightBlueBg;
+  color: $white;
+  border: 1px solid $lightBlue;
+}
+.btnIcon {
+  height: auto;
+  width: 15px;
+}

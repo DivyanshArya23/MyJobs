@@ -1,0 +1,26 @@
+@import '../../assets/styles/vars';
+
+.wrapper {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background: transparent;
+  color: $white;
+  border-bottom: 1px solid $lightGrey;
+}
+.logoImgDiv {
+  height: 40px;
+  width: auto;
+  img {
+    height: inherit;
+  }
+}
+.navRow {
+  height: 40px;
+}
+.navItem {
+  cursor: pointer;
+  transition-duration: 0.5s;
+  &:hover {
+    border-bottom: 2px solid $lightBlue;
+  }
+}
