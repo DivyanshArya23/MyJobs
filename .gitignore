@@ -35,3 +35,4 @@ yarn-error.log*
 
 #custom_ignoreFiles
 api.js
+.eslintrc.js

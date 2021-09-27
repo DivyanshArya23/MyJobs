@@ -1,0 +1,29 @@
+@import '../../assets/styles/vars';
+.card {
+  //   border: 1px solid red;
+}
+.main {
+  height: 100%;
+  background: $whiteBg;
+  box-shadow: $boxShadow;
+  border-radius: 5px;
+}
+.title {
+  font-size: 17px;
+}
+.description {
+  font-size: 14px;
+}
+.btmRow {
+  position: relative;
+  bottom: 0%;
+  .location {
+    i {
+      width: fit-content;
+    }
+    font-size: 14px;
+  }
+  .viewApl {
+    font-size: 14px;
+  }
+}

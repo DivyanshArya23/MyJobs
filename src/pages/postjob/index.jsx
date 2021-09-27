@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import cns from 'classnames';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-// import Router from 'next/router';
-// import { useDispatch } from 'react-redux';
+import { useToasts } from 'react-toast-notifications';
+import Router from 'next/router';
 import UpperLayout from '../../components/UpperLayout';
 import LowerLayout from '../../components/LowerLayout';
 import Input from '../../components/Input';
 import classes from './postjob.module.scss';
 import { ButtonLBlue } from '../../components/Button';
-import axios from '../../utils/axios/jobs';
-import logger from '../../utils/logger';
-// import * as actions from '../../redux/actions';
-// import { REGEX } from '../../config/regex';
-// import { API } from '../../config/apiurl';
-// import { STORAGE_KEYS } from '../../config';
-import { getToken } from '../../utils/methods/login';
+import axios from '../../utils/axios';
+import { checkUserLogin, getToken } from '../../utils/methods/login';
+import { TOAST_MSG } from '../../config';
 
 const PostJob = () => {
   // const dispatch = useDispatch();
+  const { addToast } = useToasts();
+  useEffect(() => {
+    checkUserLogin();
+  }, []);
   const { touched, errors, handleSubmit, getFieldProps } = useFormik({
     initialValues: {
       title: '',
@@ -31,21 +31,21 @@ const PostJob = () => {
         description: formValues.description,
         location: formValues.location,
       };
-      try {
-        const res = await axios.post(``, postData, {
-          // auth: { bearer: {} },
-          headers: { Authorization: `Bearer ${getToken()}` },
+      axios
+        .post(``, postData, {
+          headers: { Authorization: getToken() },
+        })
+        .then(() => {
+          addToast(TOAST_MSG.JOB_POST_SUCCESS, {
+            appearance: 'success',
+          });
+          Router.push('/dashboard');
+        })
+        .catch((err) => {
+          addToast(err?.data?.message, {
+            appearance: 'error',
+          });
         });
-        //   if (res.success) {
-        //     const userData = res.data;
-        //     sessionStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(userData));
-        //     dispatch(actions.updateUser(userData));
-        //     Router.push("/dashboard");
-        //   }
-        logger.log('posted::', res);
-      } catch (error) {
-        logger.log('error:', error);
-      }
     },
     validationSchema: yup.object().shape({
       title: yup.string().required('Title is required'),

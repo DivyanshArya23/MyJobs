@@ -1,12 +1,18 @@
 $white: #fff;
 $black: #000;
 $lightBlue: #43afff;
+$lightBlue2: #d9efff;
 $darkBlue: #43afff33;
 $darkBlue2: #1a253c;
 $darkBlue3: #557da526;
 $lightGrey: #4d618e;
 $lightGrey2: #e8e8e833;
+$lightGrey3: #303f6080;
+$lightGrey4: hsla(221, 12%, 70%, 0.3);
+$lightGrey5: #a9afbc;
 $darkGray: #303f60;
+$darkGray2: #303f6033;
+$darkGray3: #303f6080;
 $red: #ff0000;
 $fadedCyan: #edf6ff;
 $lightOrange: #ff333380;
@@ -15,9 +21,13 @@ $darkBlueBg: transparent linear-gradient(248deg, $darkGray 0%, $darkBlue2 100%)
   0% 0% no-repeat padding-box;
 $darkBlueBg2: $darkBlue 0% 0% no-repeat padding-box;
 $lightBlueBg: $lightBlue 0% 0% no-repeat padding-box;
+$lightBlueBg2: $lightBlue2 0% 0% no-repeat padding-box;
 $fadedCyanBg: $fadedCyan 0% 0% no-repeat padding-box;
 $whiteBg: $white 0% 0% no-repeat padding-box;
 $lightGrayBg: $lightGrey2 0% 0% no-repeat padding-box;
+$lightGrayBg2: $lightGrey4 0% 0% no-repeat padding-box;
+$lightGrayBg3: $lightGrey5 0% 0% no-repeat padding-box;
+$darkGrayBg: $darkGray2 0% 0% no-repeat padding-box;
 
 $boxShadow: 0px 3px 6px $darkBlue3;
 $boxShadow2: 0px 30px 36px $darkBlue3;

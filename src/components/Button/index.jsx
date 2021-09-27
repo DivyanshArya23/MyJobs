@@ -74,4 +74,27 @@ const IconLBBtn = ({
   );
 };
 
-export { ButtonBlue, ButtonLBlue, IconLBBtn };
+const ButtonBlue2 = ({
+  className,
+  onBlur,
+  type,
+  onClick,
+  name,
+  disabled = false,
+  children,
+}) => {
+  return (
+    <button
+      type={type || 'button'}
+      onClick={onClick}
+      name={name}
+      onBlur={onBlur}
+      disabled={disabled}
+      className={cns(className, classes.btn4)}
+    >
+      {children}
+    </button>
+  );
+};
+
+export { ButtonBlue, ButtonLBlue, IconLBBtn, ButtonBlue2 };

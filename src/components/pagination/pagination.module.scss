@@ -1,0 +1,44 @@
+@import '../../assets/styles/vars';
+
+.pageBox {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  background: $darkBlueBg2;
+  border-radius: 5px;
+  .number {
+    transform: translate(-50%, -55%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  &:hover {
+    border: 1px solid $lightBlue;
+  }
+}
+
+.navbox {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  background: $darkBlueBg2;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  i {
+    transform: translate(-50%, -55%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  &:hover {
+    border: 1px solid $lightBlue;
+  }
+}
+.pagination {
+  justify-content: center;
+}

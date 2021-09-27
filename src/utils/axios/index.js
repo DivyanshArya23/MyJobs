@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { API_URLS } from '../../../config';
-import * as actions from '../../../redux/actions';
-import store from '../../../redux/store';
+import { API_URLS } from '../../config';
+import * as actions from '../../redux/actions';
+import store from '../../redux/store';
 
 const axiosInstance = axios.create({
-  baseURL: API_URLS.auth.url,
+  baseURL: API_URLS.sqboat.url,
 });
 
 axiosInstance.interceptors.request.use((config) => {

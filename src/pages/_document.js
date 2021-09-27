@@ -40,6 +40,7 @@ export default class MyDocument extends Document {
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossOrigin="anonymous"
           />
+          <script src="https://use.fontawesome.com/7c4a7b9175.js" />
         </body>
       </Html>
     );

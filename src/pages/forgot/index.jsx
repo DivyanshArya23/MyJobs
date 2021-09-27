@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import cns from 'classnames';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Router from 'next/router';
+import { useToasts } from 'react-toast-notifications';
 import UpperLayout from '../../components/UpperLayout';
 import LowerLayout from '../../components/LowerLayout';
 import Input from '../../components/Input';
 import classes from './forgot.module.scss';
 import { ButtonLBlue } from '../../components/Button';
-import axios from '../../utils/axios/auth';
+import axios from '../../utils/axios';
 import logger from '../../utils/logger';
 import { REGEX } from '../../config/regex';
 import { API } from '../../config/apiurl';
+import { TOAST_MSG } from '../../config';
+import { checkUserLogin } from '../../utils/methods/login';
 
 const Login = () => {
+  const { addToast } = useToasts();
+  useEffect(() => {
+    checkUserLogin(false);
+  }, []);
+
   const { touched, errors, handleSubmit, getFieldProps, setFieldError } =
     useFormik({
       initialValues: {
@@ -22,9 +30,12 @@ const Login = () => {
       onSubmit: async (formValues) => {
         try {
           const res = await axios.get(
-            `/${API.RESET_PASSWORD}?email=${formValues.email}`
+            `/${API.AUTH_RESET_PASSWORD}?email=${formValues.email}`
           );
           if (res.success) {
+            addToast(TOAST_MSG.FORGOT_STEP_SENT, {
+              appearance: 'success',
+            });
             const resetToken = res?.data?.token;
             Router.push(`/resetpassword/${resetToken}`);
           }

@@ -6,6 +6,7 @@
   background: transparent;
   color: $white;
   border-bottom: 1px solid $lightGrey;
+  justify-content: space-between;
 }
 .logoImgDiv {
   height: 40px;
@@ -18,9 +19,41 @@
   height: 40px;
 }
 .navItem {
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   cursor: pointer;
   transition-duration: 0.5s;
   &:hover {
     border-bottom: 2px solid $lightBlue;
   }
+}
+.caret {
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.logout {
+  position: relative;
+}
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: -15px;
+  border-radius: 10px;
+  background: $white;
+  color: $darkGray;
+  height: 25px;
+  cursor: pointer;
+}
+.f14 {
+  font-size: 14px;
+}
+.outerLogout {
+  position: relative;
 }

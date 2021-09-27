@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import cns from 'classnames';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -8,11 +8,16 @@ import LowerLayout from '../../components/LowerLayout';
 import Input from '../../components/Input';
 import classes from './signup.module.scss';
 import { ButtonLBlue, IconLBBtn } from '../../components/Button';
-import axios from '../../utils/axios/auth';
+import axios from '../../utils/axios';
 import logger from '../../utils/logger';
 import { REGEX } from '../../config/regex';
+import { API } from '../../config/apiurl';
+import { checkUserLogin } from '../../utils/methods/login';
 
 const Signup = () => {
+  useEffect(() => {
+    checkUserLogin(false);
+  }, []);
   const {
     touched,
     errors,
@@ -39,7 +44,7 @@ const Signup = () => {
         skills: formValues.skills,
       };
       try {
-        const res = await axios.post(`/auth/register`, postData);
+        const res = await axios.post(`/${API.AUTH_REGISTER}`, postData);
         if (res.success) {
           Router.push('/login');
         }

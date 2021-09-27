@@ -1,0 +1,38 @@
+@import '../../../assets/styles/vars';
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: $darkGrayBg;
+  z-index: 1000;
+}
+.modal {
+  overflow: hidden;
+  width: 40%;
+  height: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: $whiteBg;
+  box-shadow: $boxShadow2;
+  border-radius: 20px;
+  .header {
+    border-bottom: 1px solid $darkGray2;
+    justify-content: space-between;
+    font-size: 19px;
+  }
+  .subHeading {
+    font-size: 15px;
+  }
+  .dataView {
+    height: 85%;
+    background: $lightGrayBg2;
+    border-radius: 10px;
+    overflow-y: scroll;
+    margin: 0px -5px;
+  }
+}

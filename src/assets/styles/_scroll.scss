@@ -1,0 +1,10 @@
+@import './vars';
+
+::-webkit-scrollbar {
+  width: 1.39vh;
+}
+::-webkit-scrollbar-thumb {
+  background: $lightGrayBg3;
+  border-radius: 10px;
+  min-height: 100px;
+}
