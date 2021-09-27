@@ -18,7 +18,7 @@ const AplModal = ({ isOpen, data, toggle }) => {
           </div>
         </div>
         <div className={cns(cls.subHeading, 'py-2')}>
-          Total {data?.length} Applications
+          Total {data?.length || 0} Applications
         </div>
         <div className={cns(cls.dataView, 'row')}>
           {data?.map((candidate) => {
