@@ -14,7 +14,6 @@ import { checkUserLogin, getToken } from '../../utils/methods/login';
 import { TOAST_MSG } from '../../config';
 
 const PostJob = () => {
-  // const dispatch = useDispatch();
   const { addToast } = useToasts();
   useEffect(() => {
     checkUserLogin();
@@ -115,5 +114,5 @@ const PostJob = () => {
     </div>
   );
 };
-
+export const getStaticProps = () => ({ props: {} });
 export default PostJob;

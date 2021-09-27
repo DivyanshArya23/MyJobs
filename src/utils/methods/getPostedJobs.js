@@ -15,6 +15,7 @@ const getPostedJobs = async () => {
       });
     return response;
   }
+  return null;
 };
 
 export default getPostedJobs;

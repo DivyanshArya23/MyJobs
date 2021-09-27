@@ -50,5 +50,5 @@ const Home = () => {
     </div>
   );
 };
-
+export const getStaticProps = () => ({ props: {} });
 export default Home;

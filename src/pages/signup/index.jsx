@@ -222,5 +222,5 @@ const Signup = () => {
     </div>
   );
 };
-
+export const getStaticProps = () => ({ props: {} });
 export default Signup;

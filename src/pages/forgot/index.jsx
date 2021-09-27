@@ -90,5 +90,5 @@ const Login = () => {
     </div>
   );
 };
-
+export const getStaticProps = () => ({ props: {} });
 export default Login;

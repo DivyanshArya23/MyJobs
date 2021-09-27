@@ -5,7 +5,7 @@ import UserIcon from '../UserIcon';
 
 const AplCard = ({ data: { email, name, skills } }) => {
   return (
-    <div className={cns(cls.aplcard, 'p-2 col-12 col-md-6')}>
+    <div className="p-2 col-12 col-md-6">
       <div className={cns(cls.card, 'p-2')}>
         <div className="d-flex d-flex-row pb-3">
           <div className={cns('d-flex flex-column mr-2', cls.f15)}>

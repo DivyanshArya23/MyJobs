@@ -28,7 +28,7 @@ const JobCard = ({ id, title, description, location }) => {
   };
   return (
     <>
-      <div key={id} className={cns('col-12 col-md-3 p-3', cls.card)}>
+      <div key={id} className={cns('col-12 col-md-3 p-3')}>
         <div className={cns(cls.main)}>
           <div className={cns(cls.title, 'col-12 pt-3 pb-2')}>{title}</div>
           <div className={cns(cls.description, 'col-12')}>{description}</div>

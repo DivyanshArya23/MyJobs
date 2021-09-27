@@ -1,9 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import cns from 'classnames';
-// import { useFormik } from 'formik';
-// import * as yup from 'yup';
-// import Router from 'next/router';
-// import { useDispatch } from 'react-redux';
 import { useToasts } from 'react-toast-notifications';
 import UpperLayout from '../../components/UpperLayout';
 import LowerLayout from '../../components/LowerLayout';
@@ -64,5 +59,5 @@ const Dashboard = () => {
     </div>
   );
 };
-
+export const getStaticProps = () => ({ props: {} });
 export default Dashboard;
