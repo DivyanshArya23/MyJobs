@@ -7,26 +7,18 @@ import React, { useState, useEffect } from 'react';
 import { useToasts } from 'react-toast-notifications';
 import UpperLayout from '../../components/UpperLayout';
 import LowerLayout from '../../components/LowerLayout';
-// import Input from '../../components/Input';
 import cls from './dashboard.module.scss';
 import JobCard from '../../components/JobCard';
-// import { ButtonLBlue } from '../../components/Button';
-import axios from '../../utils/axios';
-import { API } from '../../config/apiurl';
-import { checkUserLogin, getToken } from '../../utils/methods/login';
+import { checkUserLogin } from '../../utils/methods/login';
 import getPostedJobs from '../../utils/methods/getPostedJobs';
 import { Pagination } from '../../components/pagination';
-// import logger from '../../utils/logger';
-// import * as actions from '../../redux/actions';
-// import { REGEX } from '../../config/regex';
-// import { API } from '../../config/apiurl';
-// import { STORAGE_KEYS } from '../../config';
 
 const Dashboard = () => {
   const [allJobsData, setallJobsData] = useState({});
   const [postedJobs, setPostedJobs] = useState([]);
   const [lowerLimit, setLowerLimit] = useState(0);
-  const [jobsToShow, setJobsToShow] = useState(4);
+  const [jobsToShow] = useState(4);
+  const [upperLimit, setupperLimit] = useState(lowerLimit + jobsToShow);
   const { addToast } = useToasts();
 
   useEffect(async () => {
@@ -42,19 +34,12 @@ const Dashboard = () => {
     checkUserLogin();
   }, []);
 
-  const nextPage = () => {
-    setLowerLimit(lowerLimit + jobsToShow);
-  };
-  const prevPage = () => {
-    setLowerLimit(lowerLimit - jobsToShow);
-  };
-
   return (
     <div className={cls.main}>
       <UpperLayout className={cls.upperContainer} />
       <LowerLayout className={cls.lowerContainer}>
         <div className="row">
-          {postedJobs?.slice(lowerLimit, jobsToShow).map((job) => {
+          {postedJobs?.slice(lowerLimit, upperLimit).map((job) => {
             return (
               <JobCard
                 key={job.id}
@@ -68,10 +53,12 @@ const Dashboard = () => {
         </div>
 
         <Pagination
-          totalItemCount={allJobsData?.metadata?.count}
-          itemPerPage={jobsToShow}
-          onNextClick={nextPage}
-          onPrevClick={prevPage}
+          lowerLimit={lowerLimit}
+          upperLimit={upperLimit}
+          setLowerLimit={setLowerLimit}
+          setupperLimit={setupperLimit}
+          itemsToShow={jobsToShow}
+          nop={Math.ceil(allJobsData?.metadata?.count / jobsToShow)}
         />
       </LowerLayout>
     </div>
