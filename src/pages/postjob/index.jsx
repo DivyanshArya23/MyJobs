@@ -12,6 +12,7 @@ import { ButtonLBlue } from '../../components/Button';
 import axios from '../../utils/axios';
 import { checkUserLogin, getToken } from '../../utils/methods/login';
 import { TOAST_MSG } from '../../config';
+import { API } from '../../config/apiurl';
 
 const PostJob = () => {
   const { addToast } = useToasts();
@@ -31,7 +32,7 @@ const PostJob = () => {
         location: formValues.location,
       };
       axios
-        .post(``, postData, {
+        .post(`${API.JOBS}`, postData, {
           headers: { Authorization: getToken() },
         })
         .then(() => {

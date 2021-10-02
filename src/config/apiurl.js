@@ -4,6 +4,7 @@ const API = {
   AUTH_REGISTER: 'auth/register',
   RECRUITERS_JOBS: 'recruiters/jobs',
   CANDIDIATES: 'candidates',
+  JOBS: 'jobs',
 };
 
 export { API };
